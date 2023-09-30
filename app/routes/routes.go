@@ -11,8 +11,8 @@ import (
 func Register(r *gin.Engine, db *gorm.DB) {
 	apiV1 := r.Group("v1")
 	apiV1.GET("", func(context *gin.Context) {
-		common.Response(context, http.StatusOK, "API Works!", nil)
+		common.SuccessResponse(context, http.StatusOK, "API Works!", nil)
 	})
 
-	user.RegisterRoleRoutes(apiV1)
+	user.RegisterUserModuleRoutes(apiV1)
 }

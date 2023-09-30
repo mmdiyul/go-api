@@ -5,7 +5,7 @@ import (
 	"go-api/app/controllers/user"
 )
 
-func RegisterRoleRoutes(r *gin.RouterGroup) {
+func registerRoleRoutes(r *gin.RouterGroup) {
 	roles := r.Group("roles")
 
 	roles.GET("", user.GetAllRoles)
