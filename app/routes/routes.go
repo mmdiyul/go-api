@@ -2,7 +2,6 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"go-api/app/routes/user"
 	"go-api/common"
 	"gorm.io/gorm"
 	"net/http"
@@ -14,5 +13,5 @@ func Register(r *gin.Engine, db *gorm.DB) {
 		common.SuccessResponse(context, http.StatusOK, "API Works!", nil)
 	})
 
-	user.RegisterUserModuleRoutes(apiV1)
+	registerRoleRoutes(apiV1)
 }

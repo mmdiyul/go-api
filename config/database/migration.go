@@ -1,11 +1,11 @@
 package database
 
 import (
-	"go-api/app/models/user"
+	"go-api/app/models"
 	"gorm.io/gorm"
 )
 
 func Migrate(db *gorm.DB) {
-	db.AutoMigrate(&user.Role{})
-	db.AutoMigrate(&user.User{})
+	db.AutoMigrate(&models.Role{})
+	db.AutoMigrate(&models.User{})
 }

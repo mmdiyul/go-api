@@ -1,9 +1,10 @@
-package user
+package controllers
 
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
-	"go-api/app/bindings/user"
+	"go-api/app/bindings"
+	"go-api/app/services"
 	"go-api/common"
 	"log/slog"
 	"net/http"
@@ -19,9 +20,9 @@ func GetRoleByID(ctx *gin.Context) {
 }
 
 func AddRole(ctx *gin.Context) {
-	valid := common.ValidateInput(ctx, &user.RoleInputBinding{})
-	if valid {
-		common.SuccessResponse(ctx, http.StatusOK, "OK", nil)
+	data := common.ValidateInput(ctx, &bindings.RoleInputBinding{})
+	if data != nil {
+		common.SuccessResponse(ctx, http.StatusOK, "OK", services.AddRole(data))
 	}
 }
 

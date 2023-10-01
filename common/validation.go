@@ -5,10 +5,10 @@ import (
 	"net/http"
 )
 
-func ValidateInput(ctx *gin.Context, body any) bool {
+func ValidateInput(ctx *gin.Context, body any) interface{} {
 	if err := ctx.ShouldBindJSON(body); err != nil {
 		errorValidationResponse(ctx, http.StatusBadRequest, err)
-		return false
+		return nil
 	}
-	return true
+	return body
 }

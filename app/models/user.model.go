@@ -1,6 +1,8 @@
-package user
+package models
 
-import "go-api/common"
+import (
+	"go-api/common"
+)
 
 type User struct {
 	common.BaseModel

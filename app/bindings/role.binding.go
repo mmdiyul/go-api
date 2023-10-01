@@ -1,4 +1,4 @@
-package user
+package bindings
 
 type RoleBinding struct {
 	ID       int    `json:"id"`
