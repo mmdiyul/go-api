@@ -22,6 +22,7 @@ func main() {
 		return
 	}
 
+	gin.SetMode(os.Getenv("app.mode"))
 	r := gin.Default()
 	db := database.InitDatabase()
 
